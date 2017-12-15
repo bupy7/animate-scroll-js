@@ -16,7 +16,7 @@ Install
 Via [NPM](https://www.npmjs.com/):
 
 ```bash
-$ npm install js-toggle-switch
+$ npm install js-animate-scroll
 ```
 
 Usage
