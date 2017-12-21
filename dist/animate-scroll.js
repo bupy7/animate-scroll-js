@@ -287,6 +287,7 @@ var AnimateScroll = function () {
           var y = this.targetY - (1 - this.easing(t)) * this.deltaY;
 
           // setTimeout() need for iOS scroll bug fixing
+          // https://stackoverflow.com/a/11865016
           setTimeout(function (self) {
             window.scrollTo(window.scrollX, y);
 
@@ -297,7 +298,7 @@ var AnimateScroll = function () {
             } else {
               self.onFinish();
             }
-          }, 10, this);
+          }, 100, this);
         }
       };
       window.requestAnimationFrame(callback.step.bind(callback));

@@ -1,6 +1,6 @@
 {
   "name": "js-animate-scroll",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lightweight javascript library to scroll to element without jQuery.",
   "main": "src/index.js",
   "repository": {
