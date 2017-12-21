@@ -285,15 +285,19 @@ var AnimateScroll = function () {
 
           // Scroll window amount determined by easing
           var y = this.targetY - (1 - this.easing(t)) * this.deltaY;
-          window.scrollTo(window.scrollX, y);
 
-          // Continue animation as long as duration hasn't surpassed
-          if (t !== 1) {
-            this.lastY = window.pageYOffset;
-            window.requestAnimationFrame(this.step.bind(this));
-          } else {
-            this.onFinish();
-          }
+          // setTimeout() need for iOS scroll bug fixing
+          setTimeout(function (self) {
+            window.scrollTo(window.scrollX, y);
+
+            // Continue animation as long as duration hasn't surpassed
+            if (t !== 1) {
+              self.lastY = window.pageYOffset;
+              window.requestAnimationFrame(self.step.bind(self));
+            } else {
+              self.onFinish();
+            }
+          }, 10, this);
         }
       };
       window.requestAnimationFrame(callback.step.bind(callback));
