@@ -75,45 +75,57 @@
     </div>
 
     <p>Click to scroll to any of these elements</p>
-    <div id="navBar"></div>
+    <div class="navBar"></div>
+
+    <div class="elements"></div>
+
+    <p>Click to scroll to any of these elements</p>
+    <div class="navBar"></div>
     <script type="text/javascript">
-      var numElements = 10;
+      var numElements = 15;
 
       var duration = null,
           easing = null,
           padding = null,
           align = null;
 
+      var clickListener = (function (event) {
+        event.stopPropagation();
+
+        new AnimateScroll(this, {
+          duration: duration,
+          easing: easing,
+          padding: padding,
+          align: align,
+          onFinish: function () {
+            console.log('finished');
+          }
+        });
+      });
+
       function main() {
         updateExampleCode();
 
-        var navBar = document.getElementById('navBar');
+        var elements = document.querySelector('.elements');
+
+        var navBars = document.querySelectorAll('.navBar');
 
         for (var i = 0; i !== numElements; i++) {
           var color = randomColor();
 
-          var navLink = createNavLink(i, color);
-          navBar.appendChild(navLink);
+          var navLink1 = createNavLink(i, color),
+              navLink2 = createNavLink(i, color);
+          navBars[0].appendChild(navLink1);
+          navBars[1].appendChild(navLink2);
 
-          addRandomSpaces(document.body);
+          addRandomSpaces(elements);
 
           var pageItem = createScrollToElement(i, color);
-          document.body.appendChild(pageItem);
+          elements.appendChild(pageItem);
 
           // animate-scroll.js
-          navLink.addEventListener('click', (function (event) {
-            event.stopPropagation();
-
-            new AnimateScroll(this, {
-              duration: duration,
-              easing: easing,
-              padding: padding,
-              align: align,
-              onFinish: function () {
-                console.log('finished');
-              }
-            });
-          }).bind(pageItem));
+          navLink1.addEventListener('click', clickListener.bind(pageItem));
+          navLink2.addEventListener('click', clickListener.bind(pageItem));
         }
       }
 

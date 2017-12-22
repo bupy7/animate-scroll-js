@@ -1,6 +1,12 @@
 js-animate-scroll
 ================
 
+1.0.4 [2017-12-22]
+------------------
+
+- Fix: Bug with fixed bug for iOS scroll.
+- Fix: Scroll bug.
+
 1.0.3 [2017-12-21]
 ------------------
 
