@@ -2,7 +2,7 @@
   "name": "js-animate-scroll",
   "version": "1.0.5",
   "description": "Lightweight javascript library to scroll to element without jQuery.",
-  "main": "dist/index.js",
+  "main": "dist/animate-scroll.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/bupy7/js-animate-scroll.git"
