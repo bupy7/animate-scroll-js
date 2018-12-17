@@ -23,6 +23,18 @@ Usage
 -----
 
 ```js
+import AnimateScroll from 'js-animate-scroll';
+```
+
+or
+
+```html
+<script type="text/javascript" src="/js-animate-scroll/dist/animate-scroll.min.js"></script>
+```
+
+Run:
+
+```js
 var options = {
     duration: 200,
     easing: 'linear',
@@ -70,21 +82,14 @@ Notes
 Build
 -----
 
-### Using Docker
-
-Run dev environment:
+Run dev environment (if you want to use Docker, if not - step to next):
 
 ```bash
 $ docker-compose up
+$ docker-compose run ext sh
 ```
 
-Run Grunt:
-
-```bash
-$ docker-compose run --rm ext npm run build
-```
-
-### Using locale dev environment
+Run build:
 
 ```bash
 $ npm install
