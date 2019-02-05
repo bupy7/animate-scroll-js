@@ -233,10 +233,10 @@ class AnimateScroll {
       startTime: Date.now(),
       lastY: currentY,
       step: function () {
-        var stop = false
+        var stop = true
         if (this.deltaY > 0) {
           stop = this.targetY <= this.lastY
-        } else {
+        } else if (this.deltaY < 0) {
           stop = this.targetY >= this.lastY
         }
         if (stop) {

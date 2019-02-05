@@ -1,6 +1,6 @@
 {
   "name": "js-animate-scroll",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lightweight javascript library to scroll to element without jQuery.",
   "main": "dist/animate-scroll.js",
   "repository": {
@@ -17,7 +17,7 @@
     "native",
     "scrolling"
   ],
-  "author": "Sunmock Yang <http://sunmock.com>",
+  "authors": "Sunmock Yang <http://sunmock.com>",
   "contributors": [
     "Belosloodcev Vasily <vasily.belosloodcev@gmail.com>"
   ],
