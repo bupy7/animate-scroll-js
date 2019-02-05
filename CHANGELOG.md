@@ -4,7 +4,8 @@ js-animate-scroll
 1.0.8 [2019-02-06]
 ------------------
 
-- Fix: Bug fix.
+- Fix: The scroll bug when deltaY = 0.
+- Enh: Improve `.npmignore`.
 
 1.0.6 [2018-12-17]
 ------------------
