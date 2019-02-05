@@ -1,2 +1,12 @@
-/Gruntfile.js
+.DS_Store
+/node_modules
 /.idea
+/npm-debug.log
+/tests
+/umd
+/.eslintrc.js
+/.travis.yml
+/docker-compose.yml
+/Dockerfile
+/Gruntfile.js
+/karma.conf.js
